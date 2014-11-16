@@ -1,0 +1,7 @@
+git checkout -b nazwaBrancha
+git add asd.txt	- wkladanie
+git commit -m "komentarz" - zaklejanie
+git push origin master/branch -wrzucenie do skrzynki
+git status
+git -rm nazwa pliku
+git pull - fetch i pobranie z repo
