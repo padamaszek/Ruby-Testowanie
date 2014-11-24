@@ -1,11 +1,22 @@
-	
-
-    #!/bin/env ruby
-    # encoding: utf-8
+#!/bin/env ruby
+# encoding: utf-8
      
      
     class Node <
      Struct.new(:index, :czas, :poprzednik, :start, :koniec)
+    end
+
+    def cykl(lista)
+    for i in (0...lista.length) do
+		dlpoprzed = lista[i].poprzednik.length
+		for j in (0...dlpoprzed) do
+			if lista[i].index.to_i <= lista[i].poprzednik[j].to_i then
+		puts "Podany graf jest cykliczny. Wychodzę z programu."
+		exit
+			end
+		end
+	end
+
     end
      
     def sort(lista)
@@ -62,14 +73,14 @@
      wezel.poprzednik = wezel.poprzednik.split(' ').map(&:to_i)
      lista[i] = wezel
      end
-     
+    cykl(lista)
     sort(lista)
     CMP(lista)
      
     #drukowanie
+    puts "Indeks\t | Czas\t | Poprzednicy \t | EST\t | EET\t"
     lista.each do |x|
-            puts "INDEX: #{x.index} |CZAS: #{x.czas} |POPRZEDNICY: #{x.poprzednik}       \t |START: #{x.start}   |KONIEC: #{x.koniec}"
-            puts"-------------------------------------------------------------------------"
+            puts "#{index}\t | #{czas}\t | #{poprzednik} \t | #{est}\t | #{eet}\t"
     end
     puts "\t\tSciezka krytyczna :#{$sciezkaKryt} #{lista[$ilosc-1].index}"
     czasKryt = lista[$ilosc-1].koniec
