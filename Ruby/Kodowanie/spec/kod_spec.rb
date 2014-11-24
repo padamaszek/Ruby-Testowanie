@@ -1,3 +1,4 @@
+require_relative 'spec_helper.rb'
 require_relative '../lib/kod.rb'
 describe RSA do 
   class KlasaPom
@@ -25,15 +26,36 @@ describe "modul" do
 end
 
 describe "NWD" do
-  let(:a){a = }
-  let(:b){b = }
-  it "should return xxx" do
-    expect(@klasa.NWD(a,b)).to eq(xxx)
+  let(:a){a = 45}
+  let(:b){b = 60}
+  it "should return 15" do
+    expect(@klasa.NWD(a,b)).to eq(15)
   end
 end
 
+describe "wykPubl" do
+  let(:o){o = 120}
+  it "should return 7" do
+    expect(@klasa.wykPubl(o)).to eq(7)
+  end
+end
 
+describe "wyklPryw" do
+  let(:e){e = 7}
+  let(:o){o = 120}
+  it "should return 103" do
+    expect(@klasa.wyklPryw(e,o)).to eq(103)
+  end
+end
 
+describe "kodRSA" do
+  let(:t){t = 123}
+  let(:e){e = 7}
+  let(:n){n = 143}
+  it "should return 7" do
+    expect(@klasa.kodRSA(t,e,n)).to eq(7)
+  end
+end
 
 
 end

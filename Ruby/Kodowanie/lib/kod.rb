@@ -1,5 +1,5 @@
 
-module RSA 
+#module RSA 
 #Tworzenie kluczy RSA
   def euler(p,q)
     o = (p-1) * (q-1)
@@ -33,11 +33,11 @@ module RSA
 
   def wyklPryw(e,o)
     p0 = 0
-      d = 1
-      a0 = e
-      n0 = o
-    q  = n0 / a0;
-      r  = n0 % a0;
+    d = 1
+    a0 = e
+    n0 = o
+    q = n0 / a0
+    r = n0 % a0
 
     while(r > 0)
         t = p0 - q * d
@@ -48,7 +48,7 @@ module RSA
         p0 = d
         d = t
         n0 = a0
-        a0 = rs
+        a0 = r
         q  = n0 / a0
         r  = n0 % a0
     end
@@ -69,4 +69,4 @@ module RSA
       end
       return wyn;
     end
-end
+#end
