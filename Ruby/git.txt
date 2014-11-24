@@ -1,0 +1,12 @@
+git checkout -b nazwaBrancha
+git add asd.txt	- wkladanie
+git commit -m "komentarz" - zaklejanie
+git push origin master/branch -wrzucenie do skrzynki
+git status
+git -rm nazwa pliku - usuniecie
+git rm -r --cached myFolder - usuniecie folderu z repo ale nie z locala
+git pull - fetch i pobranie z repo
+
+Zmiana komentarza(most recent push)
+git commit --amend -m "New commit message"
+git push --force origin <BRANCH-NAME>
